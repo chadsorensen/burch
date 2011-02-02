@@ -1,4 +1,16 @@
 Burch::Application.routes.draw do
+  get "public/index"
+
+  get "public/about"
+
+  get "public/news"
+
+  get "public/ordering"
+
+  get "public/contact"
+
+  get "public/product"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
