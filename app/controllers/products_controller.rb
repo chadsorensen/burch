@@ -40,6 +40,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.xml
   def create
+    handle_image_upload(params)
     @product = Product.new(params[:product])
 
     respond_to do |format|
@@ -56,6 +57,7 @@ class ProductsController < ApplicationController
   # PUT /products/1
   # PUT /products/1.xml
   def update
+    handle_image_upload(params)
     @product = Product.find(params[:id])
 
     respond_to do |format|
@@ -80,4 +82,17 @@ class ProductsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private
+
+    def handle_image_upload(params)
+      if params[:image]
+        uploaded_io = params[:image]
+        File.open(Rails.root.join('public', 'images','products',
+            uploaded_io.original_filename), 'wb') do |file|
+          file.write(uploaded_io.read)
+        end
+        params[:product]['image'] = uploaded_io.original_filename
+      end
+    end
 end
