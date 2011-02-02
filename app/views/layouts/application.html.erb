@@ -1,14 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Burch</title>
+  <title>Burch Beanies</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-
+  <div id="wrapper">
+    <div id="logo">
+      <h1>Burch Beanies</h1>
+    </div>
+      
+    <div class="nav">
+      <ul id="main_nav">
+        <li class="no_padding_left"><a href="">Home</a></li>
+        <li><a href="product_main.php" class="drop_down" >Product</a>
+          <ul>
+            <li><a href="">Men</a>
+              <ul>
+                <li><a href="">Men's Subproduct</a></li> 
+                <li><a href="">Men's Subproduct</a></li> 
+                <li><a href="">Men's Subproduct</a></li> 
+              </ul>
+            </li>
+            <li><a href="">Women</a>
+              <ul>
+                <li><a href="">Women's Subproduct</a></li> 
+                <li><a href="">Women's Subproduct</a></li> 
+                <li><a href="">Women's Subproduct</a></li> 
+              </ul>
+            </li>
+            <li><a href="">Children</a>
+              <ul>
+                <li><a href="">Children's Subproduct</a></li> 
+                <li><a href="">Children's Subproduct</a></li> 
+                <li><a href="">Children's Subproduct</a></li> 
+              </ul>
+            </li>
+            
+          </ul>
+        </li>
+          
+        <li><a href="#">News</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Ordering Info</a></li>
+        <li><a class="no_border" href="#">Contact Us</a></li>
+      </ul>
+      <ul id="sub_nav">
+        <li><a href="#">Shopping Cart</a></li>
+        <li><a href="#">Check Out</a></li>
+      </ul>
+    </div>
 <%= yield %>
-
+  
+    <div class="footer">
+        <ul>
+          <li class="margin_right">Birch Beanies 123 NE Trenton St Bend, OR 97701</li>
+          <li>birchbeanies@gmail.com</li>
+        </ul>
+    </div>
+  </div>
 </body>
 </html>

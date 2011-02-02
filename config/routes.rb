@@ -1,6 +1,10 @@
 Burch::Application.routes.draw do
-  get "public/index"
+  resources :products
 
+  get "public/index"
+  
+  match "" => "public#index"
+  
   get "public/about"
 
   get "public/news"
