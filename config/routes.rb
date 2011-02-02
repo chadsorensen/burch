@@ -1,4 +1,8 @@
 Burch::Application.routes.draw do
+  resources :styles
+
+  resources :genders
+
   resources :products
 
   get "public/index"
